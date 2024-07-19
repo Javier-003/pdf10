@@ -89,8 +89,7 @@ def upload_pdf():
 
         if file and file.filename.endswith('.pdf'):
             filename = secure_filename(file.filename)
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(filepath)
+            
             upload_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
             # Guardar la información del PDF en la base de datos del usuario
